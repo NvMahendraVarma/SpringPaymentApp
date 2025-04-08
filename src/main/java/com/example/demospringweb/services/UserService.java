@@ -1,5 +1,28 @@
 package com.example.demospringweb.services;
 
-public class UserService {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.example.demospringweb.dao.UserRepository;
+import com.example.demospringweb.entity.UserEntity;
 
+@Service
+public class UserService {
+	@Autowired
+	private UserRepository userRepo;
+	
+	public void register(UserEntity userEntity) {
+		 System.out.println("Registering user: " + userEntity.getUserName());
+		 
+		 userRepo.save(userEntity);
+	}
+	
+
+    public boolean login(String username, String password) {
+        System.out.println("Logging in user: " + username);
+        return true;
+    }
 }
+
+
+
+

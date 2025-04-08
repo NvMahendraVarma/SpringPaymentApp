@@ -22,17 +22,16 @@ public class UserLoginController {
 		return "login";
 	}
 	
-	@PostMapping("/welcome")
-    public String authenticateUser(@RequestParam("username") String userName,
+	@PostMapping("/loginForm")
+    public String authenticateUser(@RequestParam("user_name") String userName,
                                    @RequestParam("password") String password,
                                    Model model) {
-        UserEntity user = userRepository.findByUserNameAndPassword(userName, password);
-
-        if (user != null) {
-            return "dashboard"; // Redirects to dashboard.html
+        UserEntity user = userRepository.findByUserName(userName);
+        if (user != null && user.getPassword().equals(password)) {
+            return "dashBoard"; 
         } else {
             model.addAttribute("errorMessage", "Invalid Username or Password");
-            return "login"; // Return to login page with error
+            return "login"; 
         }
     }
 }

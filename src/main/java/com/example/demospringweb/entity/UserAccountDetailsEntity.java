@@ -27,6 +27,62 @@ public class UserAccountDetailsEntity {
 	@Column(name = "account_open_date", nullable = false)
 	private LocalDate accountOpenDate;
 	
+	public int getUserAccountId() {
+		return userAccountId;
+	}
+
+	public void setUserAccountId(int userAccountId) {
+		this.userAccountId = userAccountId;
+	}
+
+	public UserEntity getUserEntity() {
+		return userEntity;
+	}
+
+	public void setUserEntity(UserEntity userEntity) {
+		this.userEntity = userEntity;
+	}
+
+	public LocalDate getAccountOpenDate() {
+		return accountOpenDate;
+	}
+
+	public void setAccountOpenDate(LocalDate accountOpenDate) {
+		this.accountOpenDate = accountOpenDate;
+	}
+
+	public LocalDate getAccountCloseDate() {
+		return accountCloseDate;
+	}
+
+	public void setAccountCloseDate(LocalDate accountCloseDate) {
+		this.accountCloseDate = accountCloseDate;
+	}
+
+	public BigDecimal getCurrentWalletBalance() {
+		return currentWalletBalance;
+	}
+
+	public void setCurrentWalletBalance(BigDecimal currentWalletBalance) {
+		this.currentWalletBalance = currentWalletBalance;
+	}
+
+	public int getLinkedBankAccountsCount() {
+		return linkedBankAccountsCount;
+	}
+
+	public void setLinkedBankAccountsCount(int linkedBankAccountsCount) {
+		this.linkedBankAccountsCount = linkedBankAccountsCount;
+	}
+
+	public String getWalletPin() {
+		return walletPin;
+	}
+
+	public void setWalletPin(String walletPin) {
+		this.walletPin = walletPin;
+	}
+
 	@Column(name = "account_close_date")
 	private LocalDate accountCloseDate;
 	

@@ -40,4 +40,68 @@ public class BankAccountsEntity {
     @Column(name = "is_active", nullable = false)
     private String isActive;
 
+	public int getBankAccountId() {
+		return bankAccountId;
+	}
+
+	public void setBankAccountId(int bankAccountId) {
+		this.bankAccountId = bankAccountId;
+	}
+
+	public UserAccountDetailsEntity getUserAccountDetailsEntity() {
+		return userAccountDetailsEntity;
+	}
+
+	public void setUserAccountDetailsEntity(UserAccountDetailsEntity userAccountDetailsEntity) {
+		this.userAccountDetailsEntity = userAccountDetailsEntity;
+	}
+
+	public UserEntity getUserEntity() {
+		return userEntity;
+	}
+
+	public void setUserEntity(UserEntity userEntity) {
+		this.userEntity = userEntity;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getIfscCode() {
+		return ifscCode;
+	}
+
+	public void setIfscCode(String ifscCode) {
+		this.ifscCode = ifscCode;
+	}
+
+	public String getBankName() {
+		return bankName;
+	}
+
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+
+	public String getBankAccountBranchLocation() {
+		return bankAccountBranchLocation;
+	}
+
+	public void setBankAccountBranchLocation(String bankAccountBranchLocation) {
+		this.bankAccountBranchLocation = bankAccountBranchLocation;
+	}
+
+	public String getIsActive() {
+		return isActive;
+	}
+
+	public void setIsActive(String isActive) {
+		this.isActive = isActive;
+	}
+
 }

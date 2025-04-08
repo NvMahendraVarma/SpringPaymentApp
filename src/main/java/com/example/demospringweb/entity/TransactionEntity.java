@@ -15,6 +15,30 @@ public class TransactionEntity {
 	@Column(name="amount")
 	private double amount;
 	
+	public int getTxnId() {
+		return txnId;
+	}
+
+	public void setTxnId(int txnId) {
+		this.txnId = txnId;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public String getTxnDate() {
+		return txnDate;
+	}
+
+	public void setTxnDate(String txnDate) {
+		this.txnDate = txnDate;
+	}
+
 	@Column(name="txn_date")
 	private String txnDate;
 	
