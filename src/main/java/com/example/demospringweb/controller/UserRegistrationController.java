@@ -1,11 +1,14 @@
 package com.example.demospringweb.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demospringweb.entity.UserAccountDetailsEntity;
 import com.example.demospringweb.entity.UserEntity;
 import com.example.demospringweb.services.UserService;
 
@@ -28,7 +31,8 @@ public class UserRegistrationController {
 					            @RequestParam String lastName,
 					            @RequestParam String phone,
 					            @RequestParam String email,
-					            @RequestParam String address) {
+					            @RequestParam String address,
+					            @RequestParam String walletPin) {
 		
 	    UserEntity userEntity = new UserEntity();
         userEntity.setUserName(username);
@@ -39,7 +43,13 @@ public class UserRegistrationController {
         userEntity.setEmail(email);
         userEntity.setAddress(address);
         
-		userService.register(userEntity);
+        UserAccountDetailsEntity userAccountDetailsEntity = new UserAccountDetailsEntity();
+        userAccountDetailsEntity.setUserEntity(userEntity);
+        userAccountDetailsEntity.setWalletPin(walletPin);
+        userAccountDetailsEntity.setAccountOpenDate(LocalDate.now());
+      
+        
+		userService.register(userEntity,userAccountDetailsEntity);
 	    return "login";
 	}
 }

@@ -10,42 +10,41 @@
 	<h1>Registration</h1>		
 		<form action="/registerUser" method="post">
 			<div class="form-group">
-		        <label for="user_name">Username:</label>
+		        <label for="user_name">Username :</label>
 		        <input type="text" id="user_name" name="username" class="form-control" required>
 		    </div>
 		    <div class="form-group">
-		        <label for="user_name">Password:</label>
+		        <label for="password">Password :</label>
 		        <input type="password" name="password" class="form-control" required>
 		    </div>
 		    <div class="form-group">
-		        <label for="user_name">Firstname:</label>
-		        <input type="text" id="user_name" name="username" class="form-control" required>
+		        <label for="first_name">Firstname :</label>
+		        <input type="text" id="first_name" name="firstName" class="form-control" required>
 		    </div>
 		    <div class="form-group">
-		        <label for="user_name">Lastname:</label>
-		        <input type="text" id="user_name" name="username" class="form-control" required>
+		        <label for="last_name">Lastname :</label>
+		        <input type="text" id="last_name" name="lastName" class="form-control" required>
 		    </div>
 		    <div class="form-group">
-		        <label for="user_name">phone:</label>
-		        <input type="text" id="user_name" name="username" class="form-control" required>
+		        <label for="phone">Phone :</label>
+		        <input type="text" id="phone" name="phone" class="form-control" required>
 		    </div>
 		    <div class="form-group">
-		        <label for="user_name">Username:</label>
-		        <input type="text" id="user_name" name="username" class="form-control" required>
+		        <label for="email">Email :</label>
+		        <input type="text" id="email" name="email" class="form-control" required>
 		    </div>
 		    <div class="form-group">
-		        <label for="user_name">Username:</label>
-		        <input type="text" id="user_name" name="username" class="form-control" required>
+		        <label for="user_name">Address</label>
+		        <input type="text" id="" name="username" class="form-control" required>
 		    </div>
-	    <input type="password"  placeholder="Password" required/>
-	    <input type="text" name="firstName" placeholder="First Name" required/>
-	    <input type="text" name="lastName" placeholder="Last Name" required/>
-	    <input type="text" name="phone" placeholder="Phone" required/>
-	    <input type="email" name="email" placeholder="Email" required/>
-	    <input type="text" name="address" placeholder="Address" required/>
-    	<button type="submit">Register</button>
-	</form>
+		    <div>
+		    	<label for="user_name">Wallet pin :</label>
+		        <input type="text" id="wallet_pin" name="walletPin" class="form-control" required>
+		    </div>
+		    <div>
+		    	<button type="submit" class="btn btn-primary">Register</button>
+		    </div>
+		</form>
 	<p class="text-center mt-3">Already have an account ?<a href="/login">Login here</a></p>	
-    
 </body>
 </html>

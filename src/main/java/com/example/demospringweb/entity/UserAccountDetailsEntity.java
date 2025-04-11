@@ -27,6 +27,20 @@ public class UserAccountDetailsEntity {
 	@Column(name = "account_open_date", nullable = false)
 	private LocalDate accountOpenDate;
 	
+	@Column(name = "account_close_date")
+	private LocalDate accountCloseDate;
+	
+	@Column(name = "current_wallet_balance", nullable = false)
+	private BigDecimal currentWalletBalance = BigDecimal.ZERO; 
+	
+	@Column(name = "linked_bank_accounts_count", nullable = false)
+	private int linkedBankAccountsCount = 0;  
+	
+	@Column(name = "wallet_pin", nullable = false)
+	private String walletPin;
+	
+	
+	
 	public int getUserAccountId() {
 		return userAccountId;
 	}
@@ -83,15 +97,5 @@ public class UserAccountDetailsEntity {
 		this.walletPin = walletPin;
 	}
 
-	@Column(name = "account_close_date")
-	private LocalDate accountCloseDate;
-	
-	@Column(name = "current_wallet_balance", nullable = false)
-	private BigDecimal currentWalletBalance = BigDecimal.ZERO; 
-	
-	@Column(name = "linked_bank_accounts_count", nullable = false)
-	private int linkedBankAccountsCount = 0;  
-	
-	@Column(name = "wallet_pin", nullable = false)
-	private String walletPin;
+
 }
