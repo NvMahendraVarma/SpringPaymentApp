@@ -26,7 +26,7 @@ public class UserRegistrationController {
 	
 	@PostMapping("/registerUser")
 	public String registerUser (@RequestParam String username,
-								@RequestParam String password,
+	 							@RequestParam String password,
 								@RequestParam String firstName,
 					            @RequestParam String lastName,
 					            @RequestParam String phone,
@@ -49,7 +49,8 @@ public class UserRegistrationController {
         userAccountDetailsEntity.setAccountOpenDate(LocalDate.now());
       
         
-		userService.register(userEntity,userAccountDetailsEntity);
+		userService.register(userEntity);
+		userService.registerUserAccount(userAccountDetailsEntity);
 	    return "login";
 	}
 }

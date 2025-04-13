@@ -7,101 +7,71 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="bank_accounts")
+@Table(name = "bank_accounts")
 public class BankAccountsEntity {
-	@Id
+
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "bank_account_id")
     private int bankAccountId;
 
     @ManyToOne
     @JoinColumn(name = "user_account_id", referencedColumnName = "user_account_id", nullable = false)
-    private UserAccountDetailsEntity userAccountDetailsEntity;
+    private UserAccountDetailsEntity userAccountDetails;
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id", nullable = false)
-    private UserEntity userEntity;
+    private UserEntity user;
 
-    @Column(name = "account_number", nullable = false)
-    private String accountNumber;
+    @OneToOne
+    @JoinColumn(name = "real_account_id", referencedColumnName = "real_account_id", nullable = false)
+    private RealBankAccountEntity realBankAccount;
 
-    @Column(name = "ifsc_code", nullable = false)
-    private String ifscCode;
+    @Column(name = "account_status", nullable = false)
+    private String accountStatus; // ACTIVE, INACTIVE, FROZEN, CLOSED
 
-    @Column(name = "bank_name", nullable = false)
-    private String bankName;
+    
+    public int getBankAccountId() {
+        return bankAccountId;
+    }
 
-    @Column(name = "bank_account_branch_location", nullable = false)
-    private String bankAccountBranchLocation;
+    public void setBankAccountId(int bankAccountId) {
+        this.bankAccountId = bankAccountId;
+    }
 
-    @Column(name = "is_active", nullable = false)
-    private String isActive;
+    public UserAccountDetailsEntity getUserAccountDetails() {
+        return userAccountDetails;
+    }
 
-	public int getBankAccountId() {
-		return bankAccountId;
-	}
+    public void setUserAccountDetails(UserAccountDetailsEntity userAccountDetails) {
+        this.userAccountDetails = userAccountDetails;
+    }
 
-	public void setBankAccountId(int bankAccountId) {
-		this.bankAccountId = bankAccountId;
-	}
+    public UserEntity getUser() {
+        return user;
+    }
 
-	public UserAccountDetailsEntity getUserAccountDetailsEntity() {
-		return userAccountDetailsEntity;
-	}
+    public void setUser(UserEntity user) {
+        this.user = user;
+    }
 
-	public void setUserAccountDetailsEntity(UserAccountDetailsEntity userAccountDetailsEntity) {
-		this.userAccountDetailsEntity = userAccountDetailsEntity;
-	}
+    public RealBankAccountEntity getRealBankAccount() {
+        return realBankAccount;
+    }
 
-	public UserEntity getUserEntity() {
-		return userEntity;
-	}
+    public void setRealBankAccount(RealBankAccountEntity realBankAccount) {
+        this.realBankAccount = realBankAccount;
+    }
 
-	public void setUserEntity(UserEntity userEntity) {
-		this.userEntity = userEntity;
-	}
+    public String getAccountStatus() {
+        return accountStatus;
+    }
 
-	public String getAccountNumber() {
-		return accountNumber;
-	}
-
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
-
-	public String getIfscCode() {
-		return ifscCode;
-	}
-
-	public void setIfscCode(String ifscCode) {
-		this.ifscCode = ifscCode;
-	}
-
-	public String getBankName() {
-		return bankName;
-	}
-
-	public void setBankName(String bankName) {
-		this.bankName = bankName;
-	}
-
-	public String getBankAccountBranchLocation() {
-		return bankAccountBranchLocation;
-	}
-
-	public void setBankAccountBranchLocation(String bankAccountBranchLocation) {
-		this.bankAccountBranchLocation = bankAccountBranchLocation;
-	}
-
-	public String getIsActive() {
-		return isActive;
-	}
-
-	public void setIsActive(String isActive) {
-		this.isActive = isActive;
-	}
-
+    public void setAccountStatus(String accountStatus) {
+        this.accountStatus = accountStatus;
+    }
 }

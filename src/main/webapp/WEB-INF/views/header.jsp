@@ -5,8 +5,8 @@
         <div id="welcomeUser">
             Welcome, <%= session.getAttribute("username") != null ? session.getAttribute("username") : "User" %>
         </div>
-	    <form method="post" action="/logout" >
-        	<button type="submit" class="btn btn-primary">logout</button>
-		</form>
+        <form method="post" action="/logout">
+            <button type="submit" class="btn btn-primary logout">Logout</button>
+        </form>
     </div>
 </div>
